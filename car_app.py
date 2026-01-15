@@ -5,7 +5,7 @@ import pickle
 
 
 # Load the saved model
-with open('model.pkl', 'rb') as f:
+with open('car_dekho_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 
@@ -21,4 +21,5 @@ if st.button("Predict"):
     prediction = model.predict(
         [[avg_session, time_app, time_web, membership]]
     )
+
     st.success(f"Predicted Yearly Amount Spent: ${prediction[0]:.2f}")
